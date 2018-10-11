@@ -1,4 +1,4 @@
-import React from './menu';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Menu = (props) => {
@@ -6,13 +6,13 @@ const Menu = (props) => {
     <nav>
       <ul>
         <li>
-          <NavLink path={ '/' }>Home</NavLink>
+          <NavLink to={ '/' }>Home</NavLink>
         </li>
         <li>
-          <NavLink path={ '/about' }>About</NavLink>
+          <NavLink to={ '/about' }>About</NavLink>
         </li>
         <li>
-          <NavLink path={ '/contact' }>Contact</NavLink>
+          <NavLink to={ '/contact' }>Contact</NavLink>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+BUCKET_NAME=""
+
+yarn build
+aws s3 rm --recursive "${BUCKET_NAME}/static"
+aws s3 cp --acl public-read --recursive --cache-control "public, max-age=3600" build/static "${BUCKET_NAME}/static"
+aws s3 cp --acl public-read --recursive --cache-control no-store --recursive --exclude "*/*" build "${BUCKET_NAME}"
